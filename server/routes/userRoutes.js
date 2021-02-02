@@ -1,23 +1,49 @@
 const router = require("express").Router();
-const bodyPardser = require("body-parser");
-const bcrypt = require("bcryptjs");
-const { check, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const moment = require("moment");
-const UserReg = require("../database/model/userSchema.js");
+const User = require("../database/model/userSchema.js");
 
-router.use(bodyPardser.json());
-router.use(bodyPardser.urlencoded({ extended: true }));
+const token_key = process.env.SECRET_KEY;
 
+// ROUTING FUNC
+// ACCESS GET
+router.get("/", async (req, res) => {
+  res.status(200).json({
+    status: true,
+    message: "get data",
+  });
+});
+
+// ROUTE
+// ACCESS REGISTER
 router.post("/register", async (req, res) => {
   try {
-    const data = await UserReg.create(req.body);
-    res.status(200).json(data);
+    const { name, email, password } = req.body;
+    const emailExist = await User.findOne({ email });
+    if (emailExist) {
+      res.status(409).json({ message: "user already exist" });
+    }
+    const user = await new User({ name, email, password });
+    await user.save();
+    res.status(200).json({ user });
   } catch (error) {
-    res.status(500).send(error);
-    throw new Error("USER NOT REGISTER");
+    res.status(502).json({ message: error });
   }
 });
-// userRoute.post("/login", postLogin);
+
+// access login
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+  if (user && (await user.isPasswordMatch(password))) {
+    res.status(200).json({
+      data: user,
+      message: "LOGIN SUCCESSFULY",
+    });
+  } else {
+    res.status(404).json({ message: "USER NOT EXIST" });
+  }
+});
 
 module.exports = router;
