@@ -5,6 +5,7 @@ const db_connection = mongoose
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useFindAndModify: false,
   })
   .then(() => console.log("DB connect successfully..."))
   .catch((error) => console.log(error));

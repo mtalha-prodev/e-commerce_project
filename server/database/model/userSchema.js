@@ -30,12 +30,14 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+// bcrypt password
 userSchema.pre("save", async function (next) {
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 
+// create function to matching password user enter in form and to database
 userSchema.methods.isPasswordMatch = async function (enterPassword) {
   return await bcrypt.compare(enterPassword, this.password);
 };

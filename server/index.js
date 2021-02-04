@@ -8,12 +8,12 @@ const userRoutes = require("./routes/userRoutes.js");
 
 const app = express();
 
-app.use(cors());
 app.use(morgan());
-
 app.use(bodyPardser.json());
 app.use(bodyPardser.urlencoded({ extended: true }));
+app.use(cors());
 
+app.use(express.static("public"));
 // user routes
 app.use("/api/user", userRoutes);
 
