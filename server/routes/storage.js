@@ -14,22 +14,22 @@ const fileFilter = (req, file, cb) => {
     cb("File is not allow! please select only png,jpeg, jpg, gif");
   }
 };
-
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, "./public/profile_pic");
-  },
-  filename: (req, file, cb) => {
-    const p1 = randomString.generate(7);
-    const p2 = randomString.generate(7);
-    const ext = path.extname(file.originalname).toLowerCase();
-    cb(null, p1 + "_" + p2 + ext);
-  },
-});
-const upload = multer({
-  storage: storage,
-  limits: { fileSize: 1024 * 1024 * 2 },
-  fileFilter: fileFilter,
-}).single("profile_pic");
-
-module.exports = upload;
+const getUpload = () => {
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, "./public/profile_pic");
+    },
+    filename: (req, file, cb) => {
+      const p1 = randomString.generate(7);
+      const p2 = randomString.generate(7);
+      const ext = path.extname(file.originalname).toLowerCase();
+      cb(null, p1 + "_" + p2 + ext);
+    },
+  });
+  return multer({
+    storage: storage,
+    limits: { fileSize: 1024 * 1024 * 2 },
+    fileFilter: fileFilter,
+  }).single("profile_pic");
+};
+module.exports = { getUpload };

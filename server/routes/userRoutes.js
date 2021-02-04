@@ -2,9 +2,9 @@ const router = require("express").Router();
 const jwt = require("jsonwebtoken");
 const User = require("../database/model/userSchema.js");
 const moment = require("moment");
-const token_verify = require("../middleware/token_verify.js");
+const verifyToken = require("../middleware/verifyToken.js");
 
-const upload = require("./storage.js");
+const storage = require("./storage.js");
 
 // set logic to uploadImage image in database
 
@@ -38,13 +38,12 @@ router.post("/register", async (req, res) => {
 });
 
 // access login
-router.post("/login", token_verify, async (req, res) => {
+router.post("/login", verifyToken, async (req, res) => {
   // generate token
   const { email, password } = req.body;
 
   const user = await User.findOne({ email });
 
-  console.log(upload);
   if (user && (await user.isPasswordMatch(password))) {
     const token = jwt.sign({ id: user._id }, process.env.SECRET_KEY);
 
@@ -56,6 +55,45 @@ router.post("/login", token_verify, async (req, res) => {
   } else {
     res.status(404).json({ message: "USER NOT EXIST" });
   }
+});
+
+router.post("/upload", verifyToken, async (req, res) => {
+  const upload = storage.getUpload();
+
+  upload(req, res, async (error) => {
+    if (error) {
+      res.status(400).json({
+        status: false,
+        message: "token not access",
+        error,
+      });
+    }
+    if (!req.file) {
+      res.status(401).json({
+        status: false,
+        message: "please choose the file",
+      });
+    }
+    const temp = {
+      profile_pic: req.file.path,
+      updatedAt:
+        moment().format("DD/MM/YYYY") + ";" + moment().format("hh:mm:ss"),
+    };
+    try {
+      const user = await User.findByIdAndUpdate({ _id: req.user.id }, temp, {
+        new: true,
+      });
+      res.status(200).json({
+        status: true,
+        user: user,
+        message: "updated success....",
+      });
+    } catch (error) {
+      res
+        .status(502)
+        .json({ status: false, message: "user not found in database", error });
+    }
+  });
 });
 
 module.exports = router;
