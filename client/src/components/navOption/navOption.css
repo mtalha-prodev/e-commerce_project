@@ -1,0 +1,11 @@
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #757575 !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 250ms ease-in;
+}
+.nav-item .nav-link:hover {
+  color: #0da9ef !important;
+}
