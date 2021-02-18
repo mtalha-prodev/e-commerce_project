@@ -8,7 +8,7 @@ function SideOption({ title, path, Icon }) {
         <Link to={path} className="nav-link">
           {title}
         </Link>
-        <Link to="#" className="arrow-Icon">
+        <Link to={path} className="arrow-Icon">
           {Icon}
         </Link>
       </li>

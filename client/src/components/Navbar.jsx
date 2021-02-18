@@ -4,7 +4,6 @@ import "./navbar.css";
 import SideBar from "./sideNavbar/SideBar";
 
 function Navbar() {
-  const [sidebar, setSidebar] = useState(false);
   return (
     <>
       <div className="navbar navbar-expand-lg">
