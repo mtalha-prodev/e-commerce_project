@@ -1,0 +1,87 @@
+.navbar {
+  padding: 0 !important;
+  height: 80px;
+  box-shadow: 2px 4px 8px 2px #e1e7ec;
+  border-top: 1px solid #e1e7ec;
+  border-bottom: 1px solid #e1e7ec;
+  justify-content: flex-start !important;
+}
+.triger {
+  height: 100%;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e1e7ec;
+  cursor: pointer;
+}
+.triger > .triger-icon {
+  color: #606975;
+}
+
+.triger:hover .triger-icon {
+  transition: all ease-in-out 0.3s;
+  color: #0da9ef;
+}
+
+/* menu layout sidebar menu starting  */
+
+.sidebar_menu {
+  width: 290px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  background-color: #374250;
+  z-index: 999;
+  transition: 0.5s ease-in-out;
+}
+.sidebar_menu.active {
+  left: 0;
+}
+
+/* close icon  */
+
+.close {
+  position: absolute;
+  right: -25px;
+  top: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: aqua;
+  cursor: pointer;
+}
+
+/* CLOSE USING LAYOUT */
+
+.overlay_body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: -100%;
+  background-color: #606975;
+  z-index: 99;
+  opacity: 0.5;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.overlay_body.show {
+  transition: 0.6s ease;
+  left: 0;
+}
+
+/* user sign acount */
+
+.sidebar_menu > .user_account {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  color: #e1e7ec;
+  padding-left: 20px;
+  font-weight: 700;
+  border-bottom: 1px solid #606975;
+}

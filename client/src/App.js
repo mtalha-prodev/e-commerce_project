@@ -6,11 +6,13 @@ import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Service from "./pages/Service";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
