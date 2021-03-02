@@ -1,11 +1,11 @@
 import React from "react";
 
-function Sidebar() {
+function Footer() {
   return (
     <div>
-      <h1>Sidebar</h1>
+      <h1>footer</h1>
     </div>
   );
 }
 
-export default Sidebar;
+export default Footer;

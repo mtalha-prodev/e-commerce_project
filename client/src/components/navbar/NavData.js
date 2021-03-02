@@ -1,0 +1,62 @@
+import ArrowRightIcon from "@material-ui/icons/ArrowRight";
+import {
+  ACCOUNT,
+  CATEGORIES,
+  CLOSE_SIDEBAR,
+  HOME,
+  PAGES,
+  SHOPPING,
+} from "../../useReducer/actionType";
+
+export const NavData = [
+  {
+    title: "home",
+    liClasses: "nav-item",
+    linkClasses: "nav-link",
+    path: "/",
+    type: CLOSE_SIDEBAR,
+    icon: <ArrowRightIcon />,
+    iconType: HOME,
+    iconClasses: "arrow-link",
+  },
+  {
+    title: "shop",
+    liClasses: "nav-item",
+    linkClasses: "nav-link",
+    path: "/shop",
+    type: CLOSE_SIDEBAR,
+    icon: <ArrowRightIcon />,
+    iconType: SHOPPING,
+    iconClasses: "arrow-link",
+  },
+  {
+    title: "categories",
+    liClasses: "nav-item",
+    linkClasses: "nav-link",
+    path: "/categories",
+    type: CLOSE_SIDEBAR,
+    icon: <ArrowRightIcon />,
+    iconType: CATEGORIES,
+    iconClasses: "arrow-link",
+  },
+  {
+    title: "account",
+    liClasses: "nav-item",
+    linkClasses: "nav-link",
+    path: "/login",
+    type: CLOSE_SIDEBAR,
+    icon: <ArrowRightIcon />,
+    iconType: ACCOUNT,
+    iconClasses: "arrow-link",
+  },
+  {
+    title: "PAGES",
+    liClasses: "nav-item",
+    linkClasses: "nav-link",
+    path: "/pages",
+    type: CLOSE_SIDEBAR,
+    icon: <ArrowRightIcon />,
+    iconType: PAGES,
+    iconClasses: "arrow-link",
+  },
+];

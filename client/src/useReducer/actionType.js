@@ -1,0 +1,25 @@
+export const TRIGER = "TRIGER";
+export const CLOSE_SIDEBAR = "CLOSE_SIDEBAR";
+export const BACK_MENU = "BACK_MENU";
+
+// SHOPPING ACTION TYPES
+export const HOME = "HOME";
+// SHOPPING ACTION TYPES
+export const SHOPPING = "SHOPPING";
+
+// ACCOUNT ACTION TYPE
+export const ACCOUNT = "ACCOUNT";
+// PAGES ACTION TYPE
+export const PAGES = "PAGES";
+
+// CATEGORIES ACTION TYPES
+export const CATEGORIES = "CATEGORIES";
+export const BACK_CATEGORIES = "BACK_CATEGORIES";
+// SUBCATEGORIES
+export const MENSHOES = "MENSHOES";
+export const MENCLOTHING = "MENCLOTHING";
+export const WOMENSHOES = "WOMENSHOES";
+export const WOMENCLOTHING = "WOMENCLOTHING";
+export const KIDS = "KIDS";
+export const BAGS = "BAGS";
+export const ACCESSORIES = "ACCESSORIES";
