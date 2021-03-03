@@ -9,27 +9,27 @@ function SidebarItem({ state, dispatch }) {
         <>
           <CategoriesOption
             title="sneakers"
-            path="/men's/shoes"
+            path="/men's/shoes/sneakers"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="loafers"
-            path="/men's/shoes"
+            path="/men's/shoes/loafers"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="boat shoes"
-            path="/men's/shoes"
+            path="/men's/shoes/boat"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="sandals"
-            path="/men's/shoes"
+            path="/men's/shoes/sandals"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/men's/shoes"
+            path="/men's/shoes/view"
             dispatch={dispatch}
           />
         </>
@@ -39,28 +39,23 @@ function SidebarItem({ state, dispatch }) {
       {state.menclothing ? (
         <>
           <CategoriesOption
-            title="sneakers"
-            path="/men's/clothing"
+            title="SHIRTS & TOPS"
+            path="/men's/clothing/shirts"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/men's/clothing"
+            title="pants"
+            path="/men's/clothing/pants"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="boat clothing"
-            path="/men's/clothing"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="sandals"
-            path="/men's/clothing"
+            title="jackets"
+            path="/men's/clothing/jackets"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/men's/clothing"
+            path="/men's/clothing/view"
             dispatch={dispatch}
           />
         </>
@@ -69,27 +64,27 @@ function SidebarItem({ state, dispatch }) {
         <>
           <CategoriesOption
             title="sneakers"
-            path="/women's/shoes"
+            path="/women's/shoes/sneakers"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/women's/shoes"
+            title="flats"
+            path="/women's/shoes/flats"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="boat shoes"
-            path="/women's/shoes"
+            title="heels"
+            path="/women's/shoes/heels"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="sandals"
-            path="/women's/shoes"
+            path="/women's/shoes/sandals"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/women's/shoes"
+            path="/women's/shoes/view"
             dispatch={dispatch}
           />
         </>
@@ -98,28 +93,23 @@ function SidebarItem({ state, dispatch }) {
       {state.womenclothing ? (
         <>
           <CategoriesOption
-            title="sneakers"
-            path="/women's/clothing"
+            title="Dresses"
+            path="/women's/clothing/shirts"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/women's/clothing"
+            title="shorts"
+            path="/women's/clothing/shorts"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="boat clothing"
-            path="/women's/clothing"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="sandals"
-            path="/women's/clothing"
+            title="swimwear"
+            path="/women's/clothing/swimwear"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/women's/clothing"
+            path="/women's/clothing/view"
             dispatch={dispatch}
           />
         </>
@@ -128,28 +118,13 @@ function SidebarItem({ state, dispatch }) {
       {state.kids ? (
         <>
           <CategoriesOption
-            title="sneakers"
-            path="/men's/clothing"
+            title="Kids clothing"
+            path="/kids/clothing"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/men's/shoes"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="boat shoes"
-            path="/men's/shoes"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="sandals"
-            path="/men's/shoes"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="view all"
-            path="/men's/shoes"
+            title="kids shoes"
+            path="/kids/shoes"
             dispatch={dispatch}
           />
         </>
@@ -157,28 +132,23 @@ function SidebarItem({ state, dispatch }) {
       {state.bags ? (
         <>
           <CategoriesOption
-            title="sneakers"
-            path="/men's/shoes"
+            title="handbags"
+            path="/bags/handbags"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/men's/shoes"
+            title="backpacks"
+            path="/backpacks"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="boat shoes"
-            path="/men's/shoes"
-            dispatch={dispatch}
-          />
-          <CategoriesOption
-            title="sandals"
-            path="/men's/shoes"
+            title="luggage"
+            path="/wallets"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/men's/shoes"
+            path="/bags/view"
             dispatch={dispatch}
           />
         </>
@@ -186,28 +156,33 @@ function SidebarItem({ state, dispatch }) {
       {state.accessories ? (
         <>
           <CategoriesOption
-            title="sneakers"
-            path="/men's/shoes"
+            title="sunglasses"
+            path="/accessories/sunglasses"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="loafers"
-            path="/men's/shoes"
+            title="hats"
+            path="/accessories/hats"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="boat shoes"
-            path="/men's/shoes"
+            title="watches"
+            path="/accessories/watches"
             dispatch={dispatch}
           />
           <CategoriesOption
-            title="sandals"
-            path="/men's/shoes"
+            title="jewelry"
+            path="/accessories/jewelry"
+            dispatch={dispatch}
+          />
+          <CategoriesOption
+            title="belts"
+            path="/accessories/belts"
             dispatch={dispatch}
           />
           <CategoriesOption
             title="view all"
-            path="/men's/shoes"
+            path="/accessories/view"
             dispatch={dispatch}
           />
         </>

@@ -21,12 +21,13 @@ function Sidebar({ state, dispatch }) {
     <>
       <ul className="navbar-nav flex-column">
         <li className="nav-item">
+          {/* categories back arrow  */}
           {categorieProducts ? (
             <Link
               onClick={() => dispatch({ type: BACK_CATEGORIES })}
               className="nav-link"
             >
-              <ArrowBackIcon className="back_icon" />
+              <ArrowBackIcon className="back_icon" /> go back
             </Link>
           ) : (
             <Link
