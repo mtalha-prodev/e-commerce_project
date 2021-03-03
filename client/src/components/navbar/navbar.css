@@ -51,7 +51,6 @@ body {
 
 .cart {
   cursor: pointer;
-  /* background-color: #606975; */
   height: 100%;
   width: 85px;
   display: flex;
@@ -65,7 +64,6 @@ body {
 }
 
 .MuiBadge-badge {
-  /* color: #0da9ef !important; */
   background-color: #0da9ef !important;
   font-size: 12px !important;
   color: #e1e7ec;
@@ -75,10 +73,6 @@ body {
   font-size: 27px !important;
   color: #505050;
 }
-/* .nav-cart {
-  display: flex;
-  justify-content: space-between;
-} */
 
 /* main manu end  */
 
