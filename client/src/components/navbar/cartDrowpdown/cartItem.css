@@ -1,15 +1,18 @@
 p {
   margin: 0 !important;
 }
+
+/* add card drowpdown code */
+/* card background */
 .cart_check {
   cursor: default;
   position: absolute;
   top: 60px;
-  right: 100%;
+  right: -250px;
   width: 240px;
   z-index: 100;
   height: 0px;
-  opacity: 0;
+  opacity: 1;
   background-color: #fff;
   padding: 5px 10px;
   box-shadow: -2px 4px 10px 2px #e1e7ec;
@@ -17,11 +20,12 @@ p {
   border: 1px solid #e1e7ec;
   border-radius: 5px;
 }
+/* card front item */
 .cart_check .card {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 0;
+  width: -100%;
   height: 0px;
   padding: 5px 0px !important;
   border-radius: 0 !important;
@@ -30,16 +34,13 @@ p {
   border-bottom: 1px solid #e1e7ec;
   transition: all ease-in-out 0.3s;
   opacity: 0;
-  width: 100%;
-  height: 78px;
-  opacity: 1;
 }
 .cart:hover .cart_check {
   transition: all ease-in-out 0.3s;
   top: 65px;
   height: auto;
   opacity: 1;
-  right: 22px;
+  right: 8px;
   width: 240px;
 }
 .cart:hover .card {
