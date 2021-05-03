@@ -2,7 +2,7 @@ import React from "react";
 
 import CategoriesOption from "./CategoriesOption";
 
-function SidebarItem({ state, dispatch }) {
+function SidebarItem({ state, menuDispatch }) {
   return (
     <>
       {state.menshoes ? (
@@ -10,27 +10,27 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="sneakers"
             path="/men's/shoes/sneakers"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="loafers"
             path="/men's/shoes/loafers"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="boat shoes"
             path="/men's/shoes/boat"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="sandals"
             path="/men's/shoes/sandals"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/men's/shoes/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -41,22 +41,22 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="SHIRTS & TOPS"
             path="/men's/clothing/shirts"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="pants"
             path="/men's/clothing/pants"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="jackets"
             path="/men's/clothing/jackets"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/men's/clothing/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -65,27 +65,27 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="sneakers"
             path="/women's/shoes/sneakers"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="flats"
             path="/women's/shoes/flats"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="heels"
             path="/women's/shoes/heels"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="sandals"
             path="/women's/shoes/sandals"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/women's/shoes/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -95,22 +95,22 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="Dresses"
             path="/women's/clothing/shirts"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="shorts"
             path="/women's/clothing/shorts"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="swimwear"
             path="/women's/clothing/swimwear"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/women's/clothing/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -120,12 +120,12 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="Kids clothing"
             path="/kids/clothing"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="kids shoes"
             path="/kids/shoes"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -134,22 +134,22 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="handbags"
             path="/bags/handbags"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="backpacks"
             path="/backpacks"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="luggage"
             path="/wallets"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/bags/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}
@@ -158,32 +158,32 @@ function SidebarItem({ state, dispatch }) {
           <CategoriesOption
             title="sunglasses"
             path="/accessories/sunglasses"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="hats"
             path="/accessories/hats"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="watches"
             path="/accessories/watches"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="jewelry"
             path="/accessories/jewelry"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="belts"
             path="/accessories/belts"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
           <CategoriesOption
             title="view all"
             path="/accessories/view"
-            dispatch={dispatch}
+            menuDispatch={menuDispatch}
           />
         </>
       ) : null}

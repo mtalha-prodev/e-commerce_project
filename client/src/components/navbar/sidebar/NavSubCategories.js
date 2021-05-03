@@ -6,7 +6,7 @@ import SubCategory from "./NavSubItem";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import { categoriesData } from "./sidebarItem/categoriesData";
 
-function Sidebar({ state, dispatch }) {
+function Sidebar({ state, menuDispatch }) {
   // defined categories action type
   const categorieProducts =
     state.menshoes ||
@@ -24,14 +24,14 @@ function Sidebar({ state, dispatch }) {
           {/* categories back arrow  */}
           {categorieProducts ? (
             <Link
-              onClick={() => dispatch({ type: BACK_CATEGORIES })}
+              onClick={() => menuDispatch({ type: BACK_CATEGORIES })}
               className="nav-link"
             >
               <ArrowBackIcon className="back_icon" /> go back
             </Link>
           ) : (
             <Link
-              onClick={() => dispatch({ type: BACK_MENU })}
+              onClick={() => menuDispatch({ type: BACK_MENU })}
               className="nav-link"
             >
               <ArrowBackIcon className="back_icon" /> GO BACK
@@ -47,13 +47,13 @@ function Sidebar({ state, dispatch }) {
                   <Link
                     to={item.path}
                     className={item.linkClasses}
-                    onClick={() => dispatch({ type: item.type })}
+                    onClick={() => menuDispatch({ type: item.type })}
                   >
                     {item.title}
                   </Link>
                   <span
                     className={item.iconClasses}
-                    onClick={() => dispatch({ type: item.iconType })}
+                    onClick={() => menuDispatch({ type: item.iconType })}
                   >
                     {item.icon}
                   </span>
@@ -62,7 +62,7 @@ function Sidebar({ state, dispatch }) {
             })
           ) : null
         ) : (
-          <CategoriesSubItem state={state} dispatch={dispatch} />
+          <CategoriesSubItem state={state} menuDispatch={menuDispatch} />
         )}
         {/* caterories code end */}
 
@@ -70,17 +70,17 @@ function Sidebar({ state, dispatch }) {
           <>
             <SubCategory
               title="FeatureD PRODUCTs SLIDER"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/feature/products/slider"
             />
             <SubCategory
               title="Feature Categories"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/feature/categories"
             />
             <SubCategory
               title="products collection showcase"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/products/collection/showcase"
             />
           </>
@@ -89,18 +89,22 @@ function Sidebar({ state, dispatch }) {
           <>
             <SubCategory
               title="shop categories"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/shop/categories"
             />
             <SubCategory
               title="single product"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/single/product"
             />
-            <SubCategory title="cart" dispatch={dispatch} path="/cary" />
+            <SubCategory
+              title="cart"
+              menuDispatch={menuDispatch}
+              path="/cary"
+            />
             <SubCategory
               title="checkout"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/checkout"
             />
           </>
@@ -111,32 +115,36 @@ function Sidebar({ state, dispatch }) {
           <>
             <SubCategory
               title="login / register"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/login/register"
             />
             <SubCategory
               title="profile page"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/profile"
             />
           </>
         ) : null}
         {state.pages ? (
           <>
-            <SubCategory title="about us" dispatch={dispatch} path="/about" />
+            <SubCategory
+              title="about us"
+              menuDispatch={menuDispatch}
+              path="/about"
+            />
             <SubCategory
               title="services"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/services"
             />
             <SubCategory
               title="contacts"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/contacts"
             />
             <SubCategory
               title="documentation"
-              dispatch={dispatch}
+              menuDispatch={menuDispatch}
               path="/documentation"
             />
           </>

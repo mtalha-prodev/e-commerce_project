@@ -13,7 +13,7 @@ import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import CartItem from "./cartDrowpdown/CartItem";
 
 function Navbar() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, menuDispatch] = useReducer(reducer, initialState);
 
   // any one categories is true show categories part
   const navSubCategory =
@@ -27,20 +27,20 @@ function Navbar() {
     <>
       <nav className="navbar  navbar-expand-lg ">
         {/* menu bar humberger */}
-        <div className="triger" onClick={() => dispatch({ type: TRIGER })}>
+        <div className="triger" onClick={() => menuDispatch({ type: TRIGER })}>
           <MenuRoundedIcon className="triger-icon" />
         </div>
         {/* when open sidebar to set overly complete body  */}
         <div
           className={!state.menu ? "overlay_body" : "overlay_body show"}
-          onClick={() => dispatch({ type: CLOSE_SIDEBAR })}
+          onClick={() => menuDispatch({ type: CLOSE_SIDEBAR })}
         ></div>
         {/* sidebar menu start  */}
         <div className={!state.menu ? "sidebar_menu" : "sidebar_menu active"}>
           {/* close sidebar using close icon && layout blur  start */}
           <div
             className="close"
-            onClick={() => dispatch({ type: CLOSE_SIDEBAR })}
+            onClick={() => menuDispatch({ type: CLOSE_SIDEBAR })}
           >
             <CloseRoundedIcon className=" close_icon" />
           </div>
@@ -51,7 +51,7 @@ function Navbar() {
 
           {/* if any one condition is true to go next part */}
           {navSubCategory ? (
-            <NavSubCategories state={state} dispatch={dispatch} />
+            <NavSubCategories state={state} menuDispatch={menuDispatch} />
           ) : null}
 
           {/* sidebar menu link setup */}
@@ -63,13 +63,13 @@ function Navbar() {
                     <Link
                       to={item.path}
                       className={item.linkClasses}
-                      onClick={() => dispatch({ type: item.type })}
+                      onClick={() => menuDispatch({ type: item.type })}
                     >
                       {item.title}
                     </Link>
                     <span
                       className={item.iconClasses}
-                      onClick={() => dispatch({ type: item.iconType })}
+                      onClick={() => menuDispatch({ type: item.iconType })}
                     >
                       {item.icon}
                     </span>
