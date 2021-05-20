@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import MenuRoundedIcon from "@material-ui/icons/MenuRounded";
 import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 import { Link } from "react-router-dom";
@@ -12,8 +12,9 @@ import Badge from "@material-ui/core/Badge";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import CartItem from "./cartDrowpdown/CartItem";
 
-function Navbar() {
+const Navbar = () => {
   const [state, menuDispatch] = useReducer(reducer, initialState);
+  const [scrollY, setScrollY] = useState(false);
 
   // any one categories is true show categories part
   const navSubCategory =
@@ -25,7 +26,11 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar  navbar-expand-lg ">
+      <nav
+        className={
+          scrollY ? "navbar fix navbar-expand-md " : "navbar  navbar-expand-md "
+        }
+      >
         {/* menu bar humberger */}
         <div className="triger" onClick={() => menuDispatch({ type: TRIGER })}>
           <MenuRoundedIcon className="triger-icon" />
@@ -80,14 +85,16 @@ function Navbar() {
           ) : null}
         </div>
         {/* sidebar menu end  */}
+
         {/* MAIN NAVBAR START */}
         <Link to="/" className="navbar-brand">
           <img src={eShop} alt="logo" className=" w-100 " />
-          <span>eShop</span>
+          <span>dealStore</span>
         </Link>
         <ul className="navbar-nav m-auto">
           {/* MAIN NAVBAR END */}
-          <h1>hi</h1>
+          {/* <h1>hi</h1> */}
+          <div className="fixed-center">Scroll position: {scrollY}px</div>
         </ul>
         <div className="cart">
           <Badge
@@ -105,6 +112,6 @@ function Navbar() {
       </nav>
     </>
   );
-}
+};
 
 export default Navbar;

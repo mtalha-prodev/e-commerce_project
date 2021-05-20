@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import "./App.css";
@@ -8,8 +7,20 @@ import About from "./pages/About";
 import Service from "./pages/Service";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import { useEffect } from "react";
 
-function App() {
+const App = () => {
+  const Scroll = () => {
+    console.log(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", Scroll, true);
+    return () => {
+      window.removeEventListener("scroll", Scroll);
+    };
+  }, []);
+
   return (
     <div className="App">
       <Router>
@@ -23,6 +34,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

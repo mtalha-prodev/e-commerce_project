@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { CLOSE_SIDEBAR } from "../../../useReducer/actionType";
 
-function SubCategory({ title, path, dispatch }) {
+function SubCategory({ title, path, menuDispatch }) {
   return (
     <>
       <li className="nav-item">
         <Link
           to={path}
-          onClick={() => dispatch({ type: CLOSE_SIDEBAR })}
+          onClick={() => menuDispatch({ type: CLOSE_SIDEBAR })}
           className="nav-link"
         >
           {title}

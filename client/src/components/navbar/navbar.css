@@ -1,14 +1,21 @@
 .navbar {
   padding: 0 !important;
-  height: 80px;
-  box-shadow: 2px 4px 8px #e1e7ec;
+  height: 65px;
+  box-shadow: 2px 2px 8px #e1e7ec;
   border-top: 1px solid #e1e7ec;
   border-bottom: 1px solid #e1e7ec;
+  background-color: white;
+}
+.fix {
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: white;
 }
 /* humbarger */
 .triger {
   height: 100%;
-  width: 70px;
+  width: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +51,7 @@
 .cart {
   cursor: pointer;
   height: 100%;
-  width: 85px;
+  width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
